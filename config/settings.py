@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "django_eventstream",
     # local
     'users',
+    'signal_server',
 ]
 
 MIDDLEWARE = [
@@ -131,4 +132,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = 'users.CustomUser'
 
 GRIP_URL = 'http://localhost:5561'
+
 EVENTSTREAM_STORAGE_CLASS = 'django_eventstream.storage.DjangoModelStorage'
