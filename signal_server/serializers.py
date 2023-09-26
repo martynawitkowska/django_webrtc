@@ -1,5 +1,7 @@
+from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
+from users.serializers import CustomUserSerializer
 from . import models
 
 
@@ -10,7 +12,7 @@ class RoomSerializer(serializers.ModelSerializer):
 
 
 class ParticipantSerializer(serializers.ModelSerializer):
-    # user = CustomUserSerializer()
+    user = CustomUserSerializer(read_only=True)
 
     class Meta:
         model = models.Participant
