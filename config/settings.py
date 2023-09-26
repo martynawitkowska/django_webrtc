@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     "rest_framework",
     "django_eventstream",
     # local
-    'users',
-    'signal_server',
+    'users.apps.UsersConfig',
+    'signal_server.apps.SignalServerConfig',
 ]
 
 MIDDLEWARE = [
