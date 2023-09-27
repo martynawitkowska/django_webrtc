@@ -22,4 +22,5 @@ import django_eventstream
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("events/", include(django_eventstream.urls), {'channels': ['test']}),
+    path('api/v1/', include("signal_server.urls"))
 ]
