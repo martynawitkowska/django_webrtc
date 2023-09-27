@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # 3rd party
     "rest_framework",
     "django_eventstream",
+    "drf_spectacular",
     # local
     'users.apps.UsersConfig',
     'signal_server.apps.SignalServerConfig',
@@ -134,3 +135,13 @@ AUTH_USER_MODEL = 'users.CustomUser'
 GRIP_URL = 'http://localhost:5561'
 
 EVENTSTREAM_STORAGE_CLASS = 'django_eventstream.storage.DjangoModelStorage'
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'webRTC API POC',
+    'DESCRIPTION': 'POC for webRTC protocol',
+    'VERSION': '1.0.0',
+}
