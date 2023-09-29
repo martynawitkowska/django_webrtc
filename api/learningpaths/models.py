@@ -6,6 +6,7 @@ class Topic(models.Model):
     user = models.ForeignKey(get_user_model(), related_name="topics", on_delete=models.CASCADE)
     name = models.CharField(max_length=250)
     description = models.CharField(max_length=500)
+    date_created = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return f"Roadmap for {self.name} generated for {self.user.username}"
