@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     # local
     "users.apps.UsersConfig",
     "signal_server.apps.SignalServerConfig",
+    "learningpaths.apps.LearningpathsConfig",
+    "coures.apps.CouresConfig",
 ]
 
 MIDDLEWARE = [
