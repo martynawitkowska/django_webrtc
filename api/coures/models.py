@@ -20,3 +20,23 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Enrollment(models.Model):
+    student = models.ForeignKey(get_user_model(), related_name="enrolled_courses", on_delete=models.CASCADE)
+    course = models.ForeignKey("Course", related_name="enrolled_students", on_delete=models.CASCADE)
+    date_enrolled = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.student.username} enrolled to {self.course.name} on {self.date_enrolled}"
+
+
+class Timetable(models.Model):
+    course = models.ForeignKey("Course", related_name="class_dates", on_delete=models.CASCADE)
+    subject = models.CharField(max_length=250)
+    date = models.DateField()
+    time = models.TimeField()
+    duration = models.PositiveSmallIntegerField()
+
+    def __str__(self):
+        return f"{self.subject} on {self.date} at {self.time}"
