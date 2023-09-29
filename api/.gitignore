@@ -1,5 +1,7 @@
 ../.idea
 **/*.pyc
 
+ERD_Samouk_v1.png
+
 venv
 db.sqlite3

@@ -4,6 +4,9 @@ from . import models
 
 
 class CustomUserAdmin(UserAdmin):
-    pass
+    list_display = ("username", "email", "is_active", "date_joined")
+    ordering = ("username", "date_joined")
+
 
 admin.site.register(models.CustomUser, CustomUserAdmin)
+admin.site.register(models.Avatar)
